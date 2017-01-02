@@ -1,13 +1,15 @@
-gem "slim-rails"
-gem "bourbon"
-gem "neat"
-gem "bitters"
+gem 'slim-rails'
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'
+gem 'devise'
 
-run "rm app/assets/stylesheets/application.css"
-
-inside('app/assets/stylesheets') do
-  run "touch aplication.scss"
+gem_group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
+
+run 'rm app/assets/stylesheets/application.css'
 
 file 'app/assets/stylesheets/application.scss', <<-CODE
   @import "bourbon";
@@ -16,12 +18,21 @@ file 'app/assets/stylesheets/application.scss', <<-CODE
 CODE
 
 after_bundle do
-  generate :model, "admin email:string name:string"
-  generate :controller, "home index"
+  generate 'rspec:install'
+  generate 'devise:install'
+  generate 'devise admin'
+
+  generate :controller, 'home index'
   route "root to: 'home#index'"
-  rails_command "db:create"
-  rails_command "db:migrate"
+
+  rails_command 'db:create'
+  rails_command 'db:migrate'
+
+  environment "config.action_mailer.default_url_options = {host: 'localhost', port: 3000}", env: 'test'
+  environment "config.action_mailer.default_url_options = {host: 'localhost', port: 3000}", env: 'development'
+  environment "config.action_mailer.default_url_options = {host: 'localhost', port: 3000}", env: 'production'
+
   git :init
-  git add: "."
+  git add: '.'
   git commit: %Q{ -m 'Initial commit :sunglasses:' }
 end
