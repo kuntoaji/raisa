@@ -1,10 +1,15 @@
 # Raisa
 
-Raisa is a Rails Application Template. Tested on Rails 5.
+Raisa is a Rails 5 Application Template.
 
 ## Example
+Because this template will install rspec, you can pass `-T` option to prevent rails to generate test directory
+
+```
 rails new blog -m /home/example/raisa/template.rb -d postgresql -T
 rails new blog -m http://example.com/raisa/template.rb -d postgres -T
+rails new blog -m https://raw.githubusercontent.com/kuntoaji/raisa/master/template.rb -d postgres -T
+```
 
 ## Gems
 * CSS - Bourbon, Neat, Bitters
@@ -13,4 +18,4 @@ rails new blog -m http://example.com/raisa/template.rb -d postgres -T
 * Testing - Rspec, Factory Girl
 
 ## License
-MIT
+Released under the MIT License, Copyright (c) 2017–<i>ω</i> Kunto Aji Kristianto.
