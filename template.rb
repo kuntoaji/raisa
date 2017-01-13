@@ -30,7 +30,7 @@ after_bundle do
 
   environment "config.action_mailer.default_url_options = {host: 'localhost', port: 3000}", env: 'test'
   environment "config.action_mailer.default_url_options = {host: 'localhost', port: 3000}", env: 'development'
-  environment "config.action_mailer.default_url_options = {host: 'localhost', port: 3000}", env: 'production'
+  environment "config.action_mailer.default_url_options = {host: 'www.example.com', port: 3000}", env: 'production'
 
   git :init
   git add: '.'
