@@ -20,7 +20,7 @@ CODE
 after_bundle do
   generate 'rspec:install'
   generate 'devise:install'
-  generate 'devise admin' if yes?('Generate devise for Admin model?')
+  generate 'devise administrator' if yes?('Generate devise for Administrator model?')
 
   generate :controller, 'home index'
   route "root to: 'home#index'"
