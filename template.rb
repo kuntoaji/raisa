@@ -11,8 +11,10 @@ after_bundle do
   generate 'devise:install'
   generate 'devise administrator' if yes?('Generate devise for Administrator model?')
 
-  generate :controller, 'home index'
-  route "root to: 'home#index'"
+  if yes?('Generate Home Controller?')
+    generate :controller, 'home index'
+    route "root to: 'home#index'"
+  end
 
   rails_command 'db:create'
   rails_command 'db:migrate'
@@ -21,7 +23,9 @@ after_bundle do
   environment "config.action_mailer.default_url_options = {host: 'localhost', port: 3000}", env: 'development'
   environment "config.action_mailer.default_url_options = {host: 'www.example.com', port: 3000}", env: 'production'
 
-  git :init
-  git add: '.'
-  git commit: %Q{ -m 'Initial commit :sunglasses:' }
+  if yes?('Commit this installation?')
+    git :init
+    git add: '.'
+    git commit: %Q{ -m 'Initial commit :sunglasses:' }
+  end
 end
