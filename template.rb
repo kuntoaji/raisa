@@ -1,21 +1,10 @@
 gem 'slim-rails'
-gem 'bourbon'
-gem 'neat'
-gem 'bitters'
 gem 'devise'
 
 gem_group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
 end
-
-run 'rm app/assets/stylesheets/application.css'
-
-file 'app/assets/stylesheets/application.scss', <<-CODE
-  @import "bourbon";
-  @import "base/base";
-  @import "neat";
-CODE
 
 after_bundle do
   generate 'rspec:install'

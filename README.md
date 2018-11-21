@@ -12,7 +12,6 @@ rails new blog -m https://raw.githubusercontent.com/kuntoaji/raisa/master/templa
 ```
 
 ## Gems
-* CSS - Bourbon, Neat, Bitters
 * Template - Slim
 * Authentication - Devise
 * Testing - Rspec, Factory Girl
