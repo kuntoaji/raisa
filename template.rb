@@ -1,9 +1,9 @@
-gem 'slim-rails'
-gem 'devise'
+gem 'slim-rails', '~> 3.2.0'
+gem 'devise', '~> 4.5.0'
 
 gem_group :development, :test do
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'rspec-rails', '~> 3.8.1'
+  gem 'factory_bot_rails', '~> 4.11.1'
 end
 
 after_bundle do
