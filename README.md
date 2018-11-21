@@ -17,4 +17,4 @@ rails new blog -m https://raw.githubusercontent.com/kuntoaji/raisa/master/templa
 * Testing - Rspec, Factory Girl
 
 ## License
-Released under the MIT License, Copyright (c) 2017–<i>ω</i> Kunto Aji Kristianto.
+Raisa is released under the [MIT License](https://opensource.org/licenses/MIT).
