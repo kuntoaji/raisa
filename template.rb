@@ -9,6 +9,7 @@ end
 after_bundle do
   generate 'rspec:install'
   generate 'devise:install'
+  generate 'devise user' if yes?('Generate devise for User model?')
   generate 'devise administrator' if yes?('Generate devise for Administrator model?')
 
   if yes?('Generate Home Controller?')
