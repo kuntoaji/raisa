@@ -1,6 +1,6 @@
 # Raisa
 
-Raisa is a Rails 5 Application Template.
+Raisa is a Rails 5 Application Template. This template will install all Ruby gems as described below and generate HomeController as root path.
 
 ## Example
 Because this template will install rspec, you can pass `-T` option to prevent rails to generate test directory
@@ -14,7 +14,7 @@ rails new blog -m https://raw.githubusercontent.com/kuntoaji/raisa/master/templa
 ## Gems
 * Template - Slim
 * Authentication - Devise
-* Testing - Rspec, Factory Girl
+* Testing - Rspec, FactoryBot
 
 ## License
 Raisa is released under the [MIT License](https://opensource.org/licenses/MIT).
