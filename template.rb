@@ -17,8 +17,10 @@ after_bundle do
     route "root to: 'home#index'"
   end
 
-  rails_command 'db:create'
-  rails_command 'db:migrate'
+  if yes?('Run db:create and db:migrate?')
+    rails_command 'db:create'
+    rails_command 'db:migrate'
+  end
 
   environment "config.action_mailer.default_url_options = {host: 'localhost', port: 3000}", env: 'test'
   environment "config.action_mailer.default_url_options = {host: 'localhost', port: 3000}", env: 'development'
